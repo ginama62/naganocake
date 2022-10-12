@@ -1,0 +1,58 @@
+<div class= "container">
+  <div class= "row mt-2">
+    <div class= "col-md-4">
+      <h5>商品詳細</h5>
+    </div>
+  </div>
+
+<div class="row" style="width: 90%; margin: 20px auto;">
+  <div class="col-xs-1" ></div>
+    <div class="col-xs-5" style ="margin: 100px">
+
+<% if @item.image.attached? %>
+  <%= image_tag @item.image, size: "200x200" %>
+<% else %>
+  <%= image_tag 'default_image.jpeg', size: "200x200"%>
+<% end %>
+    </div>
+
+<div class="col-xs-6" style ="margin: 100px 0 100px 0">
+
+<table class="table">
+
+<tr>
+  <th>商品名</th>
+  <td><%= @item.name %></td>
+</tr>
+
+<tr>
+  <th>商品説明</th>
+  <td><%= @item.introduction %></td>
+</tr>
+
+<tr>
+  <th>ジャンル</th>
+  <td><%= @item.genre.name %></td>
+</tr>
+
+<tr>
+  <th>税込価格（税抜価格）</th>
+  <td><%= @item.with_tax_price %>（<%= @item.price %>）円</td>
+</tr>
+
+<tr>
+  <th>販売ステータス</th>
+  <td><% if @item.is_active %>
+    <label class="text-success">販売中</label>
+      <% else %>
+    <label class="text-secondary">売切れ</label>
+      <% end %>
+  </td>
+</table>
+
+<%= link_to "編集する", edit_admin_item_path(@item.id), class: "btn btn-success" %>
+
+      </div>
+　　</div>
+  </div>
+</div>

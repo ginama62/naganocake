@@ -1,0 +1,61 @@
+<div class= "container">
+  <div class= "row mt-2">
+    <div class= "col-md-4">
+      <h5>商品一覧</h5>
+    </div>
+    <div class= "col-md-1 offset-md-7">
+      <%= link_to new_admin_item_path do %>
+        <i class="fas fa-plus-circle" style="font-size:50px; color:#CCCCCC;"></i>
+      <% end %>
+    </div>
+  </div>
+  <div class= "row justify-content-center mt-1">
+
+  <div style="text-align:center;">
+
+    <div class= "col-md-12">
+        <table class="table table-hover table-inverse">
+          <thead>
+            <tr>
+              <th>商品ID</th>
+              <th>商品名</th>
+              <th>税抜価格</th>
+              <th>ジャンル</th>
+              <th>ステータス</th>
+              <th colspan="5"></th>
+            </tr>
+          </thread>
+          <tbody>
+              <% @items.each do |item| %>
+              <tr>
+              <td>
+                <%= item.id %>
+              </td>
+              <td>
+                <%= link_to admin_item_path(item.id) do %>
+                <%= item.name %>
+                <% end %>
+              </td>
+              <td>
+                <%= item.price %>
+              </td>
+              <td>
+                <%= item.genre.name %>
+              </td>
+              <td>
+                <% if item.is_active %>
+                  <label class="text-success">販売中</label>
+                <% else %>
+                  <label class="text-secondary">売切れ</label>
+                <% end %>
+              </td>
+
+              </tr>
+              <% end %>
+          </tbody>
+        </table>
+  </div>
+</div>
+        <%= paginate @items %>
+  </div>
+</div>

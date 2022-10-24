@@ -28,7 +28,7 @@
 <h3>新着商品</h3>
 
 <% @items.last(4).each do |item| %>
-<%= link_to public_items_show_path(item.id) do %>
+<%= link_to public_item_path(item.id) do %>
 <%= image_tag 'default_image.jpeg' ,size: '100x100' %>
 <% end %>
 <%= item.name %>

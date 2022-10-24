@@ -1,9 +1,9 @@
 
-    <h5>マイページ</h5>
+<h5>マイページ</h5>
 
 </br>
 
-&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<label>登録情報</label>&emsp;<%= link_to "編集する", public_customer_edit_path, class: "btn btn-success" %>
+<label>登録情報</label><%= link_to "編集する", public_customer_edit_path, class: "btn btn-success" %>
 </br>
 </br>
 
@@ -13,13 +13,15 @@
       <tr>
         <th class="table-secondary">氏名</th>
         <td>
-          <%= @customer.last_name %>&emsp;<%= @customer.first_name %>
+          <%= @customer.last_name %>
+          <%= @customer.first_name %>
         </td>
       </tr>
       <tr>
         <th class="table-secondary">カナ</th>
         <td>
-          <%= @customer.last_name_kana %>&emsp;<%= @customer.first_name_kana %>
+          <%= @customer.last_name_kana %>
+          <%= @customer.first_name_kana %>
         </td>
       </tr>
       <tr>
@@ -50,5 +52,5 @@
   </table>
 </br>
 
-配送先 <%= link_to "一覧を見る", public_addresses_path, class: "btn btn-primary" %>
-注文履歴 <%= link_to "一覧を見る", public_orders_index_path(@customer.id), class: "btn btn-primary" %>
+<p>配送先 <%= link_to "一覧を見る", public_addresses_path, class: "btn btn-primary" %></p>
+<p>注文履歴 <%= link_to "一覧を見る", public_orders_path(@customer.id), class: "btn btn-primary" %></p>

@@ -44,11 +44,11 @@ Rails.application.routes.draw do
     # patch "cart_items/:id" => "cart_items#update"
     # delete "cart_items/:id" => "cart_items#destroy", as: "cart_items_destroy"
     # post "cart_items" => "cart_items#create"
-    resources :orders,      only: [:new, :create, :index, :show]
-    # get "orders/new" => "orders#new"
     get 'orders/confirm'  => "orders#confirm"
     post "orders/confirm" => "orders#confirm"
     get "orders/complete" => "orders#complete"
+    resources :orders,      only: [:new, :create, :index, :show]
+    # get "orders/new" => "orders#new"
     # post "orders" => "orders#create"
     # get "orders" => "orders#index", as: "orders_index"
     # get "orders/:id" => "orders#show"

@@ -46,7 +46,7 @@ class Public::OrdersController < ApplicationController
      @order_detail.item_id = cart_item.item.id #商品idを注文商品idに代入
      @order_detail.amount = cart_item.amount #商品の個数を注文商品の個数に代入
      @order_detail.price = (cart_item.item.price*1.1).floor #消費税込みに計算して代入
-     @order_detail.order_id =  @order.id #注文商品に注文idを紐付け
+     @order_detail.order_id = @order.id #注文商品に注文idを紐付け
      @order_detail.save #注文商品を保存
     end #ループ終わり
     current_customer.cart_items.destroy_all #カートの中身を削除

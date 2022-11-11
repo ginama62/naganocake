@@ -23,31 +23,36 @@
             <% if admin_signed_in? %>
           <li>
             <%= link_to admin_items_path, class: 'nav-link text-light' do %>
-              <i class="fas fa-home"></i> 商品一覧
+              <!--<i class="fas fa-home"></i>-->
+              商品一覧
             <% end %>
           </li>
           <li>
             <%= link_to admin_customers_path, class: 'nav-link text-light' do %>
-              <i class="fas fa-users"></i> 会員一覧
+              <!--<i class="fas fa-users"></i> -->
+              会員一覧
             <% end %>
           </li>
           <li>
             <%= link_to admin_top_path, class: 'nav-link text-light' do %>
-              <i class="fas fa-book-open"></i> 注文履歴一覧
+              <!--<i class="fas fa-book-open"></i> -->
+              注文履歴一覧
             <% end %>
           </li>
           　<%= link_to admin_genres_path, class: 'nav-link text-light' do %>
-              <i class="fas fa-book-open"></i> ジャンル一覧
+              <!--<i class="fas fa-book-open"></i> -->
+              ジャンル一覧
             <% end %>
           </li>
           <li>
             <%= link_to destroy_admin_session_path, method: :delete, class: 'nav-link text-light' do%>
-              <i class="fas fa-sign-out-alt"></i> ログアウト
+              <!--<i class="fas fa-sign-out-alt"></i> -->
+              ログアウト
             <% end %>
           </li>
-          
+
             <% elsif customer_signed_in? %>
-            
+
           <li>
             <label class="text-white">
               ようこそ、<%= current_customer.last_name %>さん！
@@ -73,27 +78,31 @@
               ログアウト
             <% end %>
           </li>
-          
+
             <% else %>
 
           <li>
             <%= link_to public_about_path, class: 'nav-link text-light' do %>
-              <i class="fas fa-home"></i> About
+              <!--<i class="fas fa-home"></i> -->
+              About
             <% end %>
           </li>
           <li>
             <%= link_to public_items_path, class: 'nav-link text-light' do %>
-              <i class="fas fa-link"></i> 商品一覧
+              <!--<i class="fas fa-link"></i> -->
+              商品一覧
             <% end %>
           </li>
           <li>
             <%= link_to new_customer_registration_path, class: 'nav-link text-light' do %>
-              <i class="fas fa-user-plus"></i> 新規登録
+              <!--<i class="fas fa-user-plus"></i> -->
+              新規登録
             <% end %>
           </li>
           <li>
             <%= link_to new_customer_session_path, class: 'nav-link text-light' do %>
-              <i class="fas fa-sign-in-alt"></i> ログイン
+              <!--<i class="fas fa-sign-in-alt"></i> -->
+              ログイン
             <% end %>
           </li>
             <% end %>

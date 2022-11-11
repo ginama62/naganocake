@@ -19,8 +19,9 @@
   <h3><strong>新着商品</strong></h3>
   </div>
   <div class="row">
+        <div class="col-3">
     <% @items.last(4).each do |item| %>
-    <div class="col">
+
       <%= link_to public_item_path(item.id) do %>
         <% if item.image.attached? %>
           <%= image_tag item.image, size: "100x100" %>
@@ -32,13 +33,12 @@
           <div class="card-text"><%= item.name %></div>
           <div class="card-text">¥<%= item.price.to_s(:delimited) %></div>
         </div>
-      </div>
-    </div>
     <% end %>
+      </div>
+  </div>
     </div>
     <div class="col text-right">
       <u><%= link_to "全ての商品を見る >", public_items_path %></u>
     </div>
   </div>
 </div>
-

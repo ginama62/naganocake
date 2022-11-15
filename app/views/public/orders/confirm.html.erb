@@ -17,7 +17,7 @@
           <tr>
             <th><%= cart_item.item.name %>
             </th>
-            <td><%= cart_item.item.with_tax_price %></td>
+            <td><%= cart_item.item.with_tax_price.to_s(:delimited) %></td>
             <td><%= cart_item.amount %></td>
             <td><%= cart_item.subtotal.to_s(:delimited) %></td>
           </tr>

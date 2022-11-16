@@ -1,13 +1,15 @@
 class Public::CustomersController < ApplicationController
-  
+
   before_action :authenticate_customer!
 
   def show
+    # @customer = Customer.find(params[:id])
     @customer = current_customer
-    @customers = Customer.all
+    # @customers = Customer.all
   end
 
   def edit
+    # @customer = Customer.find(params[:id])
     @customer = current_customer
   end
 
@@ -15,15 +17,18 @@ class Public::CustomersController < ApplicationController
     @customer = current_customer
     if @customer.update(customer_params)
       flash[:notice] = "会員情報の編集が完了しました"
-      redirect_to public_customers_my_page_path(current_customer)
+      redirect_to public_customer_path(current_customer)
     else
       render :edit
     end
+    # @customer = Customer.find(params[:id])
+    # @customer.update(customer_params)
+    # redirect_to public_customer_path(current_customer)
   end
 
   def unsubscribe
     @customer = current_customer
-    
+
   def withdraw
      @customer = current_customer
      @customer.update(is_deleted: true)

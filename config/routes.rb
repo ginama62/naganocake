@@ -30,12 +30,13 @@ Rails.application.routes.draw do
   namespace :public do
     get "/" => "homes#top"
     get "about" => "homes#about"
-    resources :items,       only: [:index, :show]
+    resources :items, only: [:index, :show]
     # get "items" => "items#index", as: "items"
     # get "items/:id" => "items#show", as: "items_show"
-    get "customers/my_page" => "customers#show"
-    get "customers/information/edit" => "customers#edit", as: "customer_edit"
-    patch "customers/information" => "customers#update"
+    resources :customers, only: [:show, :edit, :update]
+    # get "customers/my_page" => "customers#show"
+    # get "customers/information/edit" => "customers#edit", as: "customer_edit"
+    # patch "customers/information" => "customers#update"
     get "customers/unsubscribe" => "customers#unsubscribe"
     patch "customers/withdraw" => "customers#withdraw"
     delete "cart_items/destroy_all" => "cart_items#destroy_all"

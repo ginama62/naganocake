@@ -1,6 +1,6 @@
 <h5>会員情報編集</h5>
 </br>
-<%= form_with model: @customer, url: public_customers_information_path, method: :patch do |f| %>
+<%= form_with model: @customer, url: public_customer_path, method: :patch do |f| %>
 
         <div class="row">
           <div class="col-3">
@@ -28,7 +28,7 @@
             <%= f.text_field :first_name_kana,  autocomplete: "last_name_kana",placeholder: "" %>
           </div>
         </div>
-        
+
         <div class="row">
           <div class="col-3">
             <%= f.label :email, "メールアドレス" %>
@@ -38,17 +38,17 @@
             <%= f.email_field :email, autocomplete: "email",placeholder: "sample@example.com" %>
           </div>
         </div>
-        
+
         <div class="row">
           <div class="col-3">
             <%= f.label :post_code, "郵便番号" %>
           </div>
           <!--<div class="col-1"></div>-->
           <div class="col-3">
-            <%= f.text_field :post_code, autocomplete: "post_code",placeholder: "0000000" %>
+            <%= f.text_field :postal_code, autocomplete: "post_code",placeholder: "0000000" %>
           </div>
         </div>
-        
+
         <div class="row">
           <div class="col-3">
             <%= f.label :address, "住所" %>
@@ -58,14 +58,14 @@
             <%= f.text_field :address, autocomplete: "address",placeholder: "", class:"col-10" %>
           </div>
         </div>
-        
+
         <div class="row">
           <div class="col-3">
-            <%= f.label :phone_number, "電話番号" %>
+            <%= f.label :telephone_number, "電話番号" %>
           </div>
           <!--<div class="col-1"></div>-->
           <div class="col-3">
-            <%= f.text_field :phone_number, autocomplete: "phone_number",placeholder: "00000000000" %>
+            <%= f.text_field :telephone_number, autocomplete: "telephone_number",placeholder: "00000000000" %>
           </div>
         </div>
         <div class="row justify-content-around">

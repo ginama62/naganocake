@@ -28,7 +28,7 @@
 <div class= "col-4 mt-3">
 <h4><%= @item.name %></h4>
 <%= @item.introduction %></br>
-<label>￥</label><%= @item.with_tax_price.to_s(:delimited) %>（税込）</br>
+<%= @item.with_tax_price.to_s(:delimited) %>円（税込）</br>
 <%= form_with model: @cart_item, url: public_cart_items_path, method: :post do |f| %>
 <%= f.hidden_field :item_id, :value => @item.id %>
 <%= f.select :amount, *[1..10], include_blank: "個数を選択" %>

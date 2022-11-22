@@ -22,7 +22,7 @@
               <th>商品ID</th>
               <th>商品名</th>
               <th>税抜価格</th>
-              <th>ジャンル</th>
+              <!--<th>ジャンル</th>-->
               <th>ステータス</th>
               <th colspan="5"></th>
             </tr>
@@ -39,11 +39,11 @@
                 <% end %>
               </td>
               <td>
-                <%= item.price %>
+                <%= item.price.to_s(:delimited) %>円
               </td>
-              <td>
-                <%= item.genre.name %>
-              </td>
+              <!--<td>-->
+              <!--  <%= item.genre.name %>-->
+              <!--</td>-->
               <td>
                 <% if item.is_active %>
                   <label class="text-success">販売中</label>

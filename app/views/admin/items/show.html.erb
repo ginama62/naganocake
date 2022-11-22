@@ -30,14 +30,14 @@
   <td><%= @item.introduction %></td>
 </tr>
 
-<tr>
-  <th>ジャンル</th>
-  <td><%= @item.genre.name %></td>
-</tr>
+<!--<tr>-->
+<!--  <th>ジャンル</th>-->
+<!--  <td><%= @item.genre.name %></td>-->
+<!--</tr>-->
 
 <tr>
   <th>税込価格（税抜価格）</th>
-  <td><%= @item.with_tax_price %>（<%= @item.price %>）円</td>
+  <td><%= @item.with_tax_price.to_s(:delimited) %>（<%= @item.price.to_s(:delimited) %>）円</td>
 </tr>
 
 <tr>
